@@ -57,45 +57,45 @@ if (menuToggle && headerNav) {
   });
 }
 
-const planItems = document.querySelectorAll(".plan-item");
+const planTriggers = document.querySelectorAll(".plan-trigger");
 
-if (planItems.length) {
-  const activatePlan = (activeItem) => {
-    planItems.forEach((item) => {
-      const isActive = item === activeItem;
-      item.classList.toggle("is-active", isActive);
-      item.setAttribute("aria-expanded", String(isActive));
-    });
+if (planTriggers.length) {
+  const panelDuration = 400;
+  let pendingPlan = null;
+
+  const setPlanState = (trigger, isOpen) => {
+    trigger.setAttribute("aria-expanded", String(isOpen));
   };
 
-  planItems.forEach((item, index) => {
-    item.addEventListener("click", () => activatePlan(item));
-    item.addEventListener("focus", () => activatePlan(item));
-    item.addEventListener("keydown", (event) => {
-      if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
-      event.preventDefault();
-      const direction = ["ArrowRight", "ArrowDown"].includes(event.key) ? 1 : -1;
-      const nextItem = planItems[(index + direction + planItems.length) % planItems.length];
-      nextItem.focus();
+  planTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const willOpen = trigger.getAttribute("aria-expanded") !== "true";
+      const openTrigger = document.querySelector('.plan-trigger[aria-expanded="true"]');
+
+      window.clearTimeout(pendingPlan);
+
+      planTriggers.forEach((item) => setPlanState(item, false));
+
+      if (!willOpen) return;
+
+      if (openTrigger && openTrigger !== trigger) {
+        pendingPlan = window.setTimeout(() => setPlanState(trigger, true), panelDuration);
+      } else {
+        setPlanState(trigger, true);
+      }
     });
   });
 }
 
-const conceptGraphic = document.querySelector(".form-graphic-concept");
+const profileTrigger = document.querySelector(".profile-trigger");
+const profilePanel = document.querySelector(".profile-panel");
 
-if (conceptGraphic && "IntersectionObserver" in window) {
-  document.documentElement.classList.add("graphic-enhanced");
+if (profileTrigger && profilePanel) {
+  profileTrigger.addEventListener("click", () => {
+    const willOpen = profileTrigger.getAttribute("aria-expanded") !== "true";
 
-  const graphicObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-shaped");
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: "0px 0px -18% 0px" }
-  );
-
-  graphicObserver.observe(conceptGraphic);
+    profileTrigger.setAttribute("aria-expanded", String(willOpen));
+    profilePanel.setAttribute("aria-hidden", String(!willOpen));
+    profilePanel.classList.toggle("is-open", willOpen);
+  });
 }

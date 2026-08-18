@@ -45,7 +45,6 @@
 
   </header>
 
-
   <main id="top">
 
     <!-- ========================
@@ -53,25 +52,14 @@
     ========================= -->
     <section class="hero">
 
-      <img
-        src="images/ccccc.jpg"
-        alt=""
-        class="hero-copy-image"
-        aria-hidden="true"
-      >
+      <div class="hero-slides" aria-hidden="true">
+        <img src="images/ccccc.jpg" alt="" class="hero-slide hero-slide-first">
+        <img src="images/top.jpg" alt="" class="hero-slide hero-slide-second">
+        <img src="images/top２.jpg" alt="" class="hero-slide hero-slide-third">
+      </div>
 
-      <div class="hero-copy">
-
-        <p class="hero-en">
-          Websites for<br>
-          small businesses.
-        </p>
-
-        <h1 class="hero-ja">
-          その仕事らしさが伝わる<br>
-          Webサイトを。
-        </h1>
-
+      <div class="hero-brand">
+        <img src="logo/were-logo-dark.svg" alt="were.">
       </div>
 
     </section>
@@ -86,20 +74,23 @@
         02 — CONCEPT
       </p>
 
+      <div class="concept-lead">
+        <p class="concept-lead-en">
+          Websites for<br>
+          small businesses.
+        </p>
+
+        <p class="concept-lead-ja">
+          その仕事らしさが伝わる<br>
+          Webサイトを。
+        </p>
+      </div>
+
       <div class="concept-heading">
         <h2>
           その仕事を<br>
           知ることから。
         </h2>
-      </div>
-
-      <div class="form-graphic form-graphic-concept" aria-hidden="true">
-        <span class="form-frame form-frame-loose"></span>
-        <span class="form-frame form-frame-ordered"></span>
-        <span class="form-frame form-frame-grid"></span>
-        <span class="form-frame form-frame-browser">
-          <i></i><i></i><i></i>
-        </span>
       </div>
 
       <div class="concept-content">
@@ -181,7 +172,7 @@
       <div class="works-heading">
 
         <div>
-          <h2>Sophie Kyoto</h2>
+          <h2>sophie kyoto</h2>
 
           <p class="works-category">
             PRIVATE NAIL SALON / KYOTO
@@ -256,78 +247,200 @@
 
       <div class="plan-list">
 
-        <article class="plan-item is-active" tabindex="0" role="button" aria-expanded="true">
+        <article class="plan-item">
+          <button class="plan-trigger" type="button" aria-expanded="false" aria-controls="plan-light">
+            <span class="plan-name">Light</span>
+          </button>
 
-          <div class="plan-top">
-            <p class="plan-name">Light</p>
-            <p class="plan-number">01</p>
+          <div class="plan-panel" id="plan-light">
+            <div class="plan-panel-inner">
+              <p class="plan-price">¥69,800〜</p>
+
+              <div class="plan-detail">
+                <p class="plan-detail-title">まずは、必要なものをシンプルに。</p>
+
+                <p class="plan-detail-copy">
+                  名刺代わりになるWebサイトや、<br>
+                  必要な情報をコンパクトにまとめたい方向け。
+                </p>
+
+                <p class="plan-detail-label">含まれるもの：</p>
+
+                <ul class="plan-detail-list">
+                  <li>スマートフォン対応</li>
+                  <li>オリジナルデザイン</li>
+                  <li>基本SEO設定</li>
+                  <li>OGP設定</li>
+                  <li>お問い合わせ・SNSなどへの導線</li>
+                  <li>ドメイン接続・公開サポート</li>
+                </ul>
+              </div>
+            </div>
           </div>
-
-          <p class="plan-price">
-            69,800 —
-          </p>
-
-          <p class="plan-description">
-            必要な情報をコンパクトにまとめた、<br>
-            シンプルなWebサイト。
-          </p>
 
         </article>
 
 
-        <article class="plan-item" tabindex="0" role="button" aria-expanded="false">
+        <article class="plan-item">
+          <button class="plan-trigger" type="button" aria-expanded="false" aria-controls="plan-standard">
+            <span class="plan-name">Standard</span>
+          </button>
 
-          <div class="plan-top">
-            <p class="plan-name">Standard</p>
-            <p class="plan-number">02</p>
+          <div class="plan-panel" id="plan-standard">
+            <div class="plan-panel-inner">
+              <p class="plan-price">¥99,800〜</p>
+
+              <div class="plan-detail">
+                <p class="plan-detail-title">その仕事らしさまで、しっかり伝える。</p>
+
+                <p class="plan-detail-copy">
+                  情報を載せるだけでなく、<br>
+                  構成や見せ方から考えて、<br>
+                  事業やお店の雰囲気まで伝えたい方向け。
+                </p>
+
+                <p class="plan-detail-label">LIGHTの内容に加えて：</p>
+
+                <ul class="plan-detail-list">
+                  <li>サイト構成の設計</li>
+                  <li>コンテンツごとの見せ方</li>
+                  <li>写真を活かしたレイアウト</li>
+                  <li>より細かなレスポンシブ調整</li>
+                  <li>必要な導線設計</li>
+                </ul>
+              </div>
+            </div>
           </div>
-
-          <p class="plan-price">
-            99,800 —
-          </p>
-
-          <p class="plan-description">
-            デザインや構成にもこだわり、<br>
-            その仕事らしさをしっかり伝えるWebサイト。
-          </p>
 
         </article>
 
 
-        <article class="plan-item" tabindex="0" role="button" aria-expanded="false">
+        <article class="plan-item">
+          <button class="plan-trigger" type="button" aria-expanded="false" aria-controls="plan-custom">
+            <span class="plan-name">Custom</span>
+          </button>
 
-          <div class="plan-top">
-            <p class="plan-name">Custom</p>
-            <p class="plan-number">03</p>
+          <div class="plan-panel" id="plan-custom">
+            <div class="plan-panel-inner">
+              <p class="plan-price">¥149,800〜</p>
+
+              <div class="plan-detail">
+                <p class="plan-detail-title">必要なものに合わせて、もう一歩先まで。</p>
+
+                <p class="plan-detail-copy">
+                  一般的なWebサイトの形に収まらない<br>
+                  機能や構成が必要な方向け。
+                </p>
+
+                <p class="plan-detail-label">STANDARDの内容に加えて：</p>
+
+                <ul class="plan-detail-list">
+                  <li>予約導線・フォーム</li>
+                  <li>独自の動きやインタラクション</li>
+                  <li>ページ数の多い構成</li>
+                  <li>特殊なレイアウト・機能など</li>
+                </ul>
+
+                <p class="plan-detail-note">補足：<br>内容に応じて個別にお見積もりします。</p>
+              </div>
+            </div>
           </div>
-
-          <p class="plan-price">
-            149,800 —
-          </p>
-
-          <p class="plan-description">
-            予約機能など、必要な機能や構成に合わせて<br>
-            個別に設計します。
-          </p>
 
         </article>
 
-      </div>
+
+        <article class="plan-item plan-item-option">
+          <button class="plan-trigger" type="button" aria-expanded="false" aria-controls="plan-option">
+            <span class="plan-name">OPTION</span>
+          </button>
+
+          <div class="plan-panel" id="plan-option">
+            <div class="plan-panel-inner plan-panel-inner-option">
+              <dl class="plan-option-list">
+                <div class="plan-option-row">
+                  <dt>ページ追加</dt>
+                  <dd>¥11,000〜 / page</dd>
+                </div>
+
+                <div class="plan-option-row">
+                  <dt>お問い合わせフォーム</dt>
+                  <dd>¥11,000〜</dd>
+                </div>
+
+                <div class="plan-option-row">
+                  <dt>予約機能・システム連携</dt>
+                  <dd>¥16,500〜</dd>
+                </div>
+
+                <div class="plan-option-row">
+                  <dt>写真撮影</dt>
+                  <dd>¥22,000〜</dd>
+                </div>
+
+                <div class="plan-option-row">
+                  <dt>文章作成・リライト</dt>
+                  <dd>¥11,000〜</dd>
+                </div>
+
+                <div class="plan-option-row">
+                  <dt>多言語対応</dt>
+                  <dd>¥22,000〜</dd>
+                </div>
+
+                <div class="plan-option-row">
+                  <dt>特殊なアニメーション・機能</dt>
+                  <dd>¥11,000〜</dd>
+                </div>
+
+                <div class="plan-option-row">
+                  <dt>その他</dt>
+                  <dd>ご相談ください</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+        </article>
 
 
-      <div class="maintenance">
+        <article class="plan-item plan-item-maintenance">
+          <button class="plan-trigger" type="button" aria-expanded="false" aria-controls="plan-maintenance">
+            <span class="plan-name">MAINTENANCE</span>
+          </button>
 
-        <p class="maintenance-label">
-          MAINTENANCE
-        </p>
+          <div class="plan-panel" id="plan-maintenance">
+            <div class="plan-panel-inner">
+              <p class="plan-price">¥3,300 / month</p>
 
-        <p class="maintenance-price">
-          3,300 / month
-        </p>
+              <div class="plan-detail">
+                <p class="plan-detail-title">公開したあとも、必要なときに。</p>
 
-        <p>
-          公開後の軽微な更新・サイト管理にも対応します。
-        </p>
+                <p class="plan-detail-copy">
+                  サイト公開後のちょっとした変更や、<br>
+                  日々の管理をサポートします。
+                </p>
+
+                <p class="plan-detail-label">含まれるもの：</p>
+
+                <ul class="plan-detail-list">
+                  <li>テキストの軽微な変更</li>
+                  <li>画像の差し替え</li>
+                  <li>リンク先の変更</li>
+                  <li>サイトの表示・動作確認</li>
+                  <li>軽微な不具合修正</li>
+                  <li>月30分程度までの更新作業</li>
+                </ul>
+
+                <p class="plan-detail-note">
+                  ※ 新しいページの追加、レイアウト変更、機能追加などは<br>
+                  メンテナンス対象外となり、別途お見積もりとなります。<br><br>
+                  ※ ドメイン・サーバー等の利用料金は含まれません。
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </article>
 
       </div>
 
@@ -355,12 +468,6 @@
           一緒に考える。<br>
           おまかせでも。
         </h2>
-
-        <p>
-          こだわりたいことがあれば、一緒に。<br>
-          まだイメージが決まっていなければ、<br>
-          were.からご提案します。
-        </p>
 
       </div>
 
@@ -400,7 +507,8 @@
 
             <p>
               必要なページや機能、<br>
-              サイト全体の方向性を決めます。
+              サイト全体の方向性を決めます。<br><br>
+              こだわりたいことがあれば、一緒に。
             </p>
 
           </article>
@@ -418,7 +526,9 @@
 
             <p>
               仕事やお店の雰囲気に合わせて、<br>
-              見た目と構成をつくります。
+              見た目と構成をつくります。<br><br>
+              まだイメージが決まっていなければ、<br>
+              were.からご提案します。
             </p>
 
           </article>
@@ -558,37 +668,44 @@
 
         <div class="profile-content">
 
-          <h2>
-            Yoshi Miyamoto
-          </h2>
+          <button
+            class="profile-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="profile-details"
+          >
+            <span class="profile-name">Yoshi Miyamoto</span>
 
-          <p class="profile-role">
-            DESIGNER / DIRECTOR
-          </p>
+            <span class="profile-role">DESIGNER / DIRECTOR</span>
+          </button>
 
-          <div class="profile-text">
+          <div class="profile-panel" id="profile-details" aria-hidden="true">
+            <div class="profile-panel-inner">
+              <div class="profile-text">
 
-            <p>
-              京都を拠点に、were.として<br>
-              Webサイトを制作しています。
-            </p>
+                <p>
+                  京都を拠点に、were.として<br>
+                  Webサイトを制作しています。
+                </p>
 
-            <p>
-              以前はカメラマンとして、<br>
-              人やお店、それぞれが持つ空気をどう残すかを<br>
-              考えながら仕事をしていました。
-            </p>
+                <p>
+                  以前はカメラマンとして、<br>
+                  人やお店、それぞれが持つ空気をどう残すかを<br>
+                  考えながら仕事をしていました。
+                </p>
 
-            <p>
-              Webサイトも、少し似ていると思っています。
-            </p>
+                <p>
+                  Webサイトも、少し似ていると思っています。
+                </p>
 
-            <p>
-              きれいにつくることだけではなく、<br>
-              その仕事のことを知って、<br>
-              その人らしさが伝わるかたちを考える。
-            </p>
+                <p>
+                  きれいにつくることだけではなく、<br>
+                  その仕事のことを知って、<br>
+                  その人らしさが伝わるかたちを考える。
+                </p>
 
+              </div>
+            </div>
           </div>
 
         </div>
@@ -631,13 +748,6 @@
           CONTACT BY EMAIL ↗
         </a>
 
-      </div>
-
-      <div class="form-graphic form-graphic-contact" aria-hidden="true">
-        <span class="contact-browser-bar"><i></i><i></i><i></i></span>
-        <span class="contact-browser-hero"></span>
-        <span class="contact-browser-copy"></span>
-        <span class="contact-browser-action"></span>
       </div>
 
     </section>
